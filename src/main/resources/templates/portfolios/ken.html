@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - <span th:text="${memberName}"></span></title>
+    <link rel="stylesheet" th:href="@{/css/monitor.css}">
+</head>
+<body style="padding: 40px;">
+<h1 th:text="${memberName}">Member Portfolio</h1>
+<p>Welcome to the portfolio page for <span th:text="${memberId}"></span>.</p>
+<br>
+<a href="/" style="color: #00ff00; font-size: 20px;">[ RETURN TO SECURITY ROOM ]</a>
+</body>
+</html>

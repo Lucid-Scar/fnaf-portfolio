@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Camera Monitor - Night 1</title>
+    <link rel="stylesheet" th:href="@{/css/monitor.css}">
+</head>
+<body>
+<div class="crt-overlay"></div>
+
+<div class="monitor-container">
+    <!-- HUD Overlay -->
+    <div class="hud top-right">
+        <span id="clock">12 AM</span><br>
+        <span class="subtext">NIGHT 1</span>
+    </div>
+
+    <div class="hud bottom-left">
+        <span>POWER LEFT: 99%</span><br>
+        <span class="usage">USAGE: <span class="green-bar"></span><span class="green-bar"></span></span>
+    </div>
+
+    <div class="camera-feed" id="feed-display">
+        <h1 class="camera-title" id="cam-title">CAM 1A - STAGE</h1>
+    </div>
+
+    <!-- Camera Selection Map -->
+    <div class="map-layout">
+        <!-- Portfolios (4 Cameras) -->
+        <button class="cam-btn portfolio" onclick="selectCamera('CAM 1A', '/portfolio/member1')">CAM 1A</button>
+        <button class="cam-btn portfolio" onclick="selectCamera('CAM 1B', '/portfolio/member2')">CAM 1B</button>
+        <button class="cam-btn portfolio" onclick="selectCamera('CAM 2A', '/portfolio/member3')">CAM 2A</button>
+        <button class="cam-btn portfolio" onclick="selectCamera('CAM 2B', '/portfolio/member4')">CAM 2B</button>
+
+        <!-- Jumpscares / Easter Eggs -->
+        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 3', 'Golden Freddy appeared!')">CAM 3</button>
+        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 4A', 'Honk the nose!')">CAM 4A</button>
+        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 5', 'IT\'S ME')">CAM 5</button>
+        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 6', 'Audio Signal Lost...')">CAM 6</button>
+    </div>
+</div>
+
+<!-- Jumpscare Modal Overlay -->
+<div id="jumpscare-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2 id="jumpscare-text">SCREAM!</h2>
+        <button onclick="closeJumpscare()">CLOSE MONITOR</button>
+    </div>
+</div>
+
+<script th:src="@{/js/camera.js}"></script>
+</body>
+</html>
