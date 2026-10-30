@@ -26,17 +26,16 @@
 
     <!-- Camera Selection Map -->
     <div class="map-layout">
-        <!-- Portfolios (4 Cameras) -->
-        <button class="cam-btn portfolio" onclick="selectCamera('CAM 1A', '/portfolio/member1')">CAM 1A</button>
-        <button class="cam-btn portfolio" onclick="selectCamera('CAM 1B', '/portfolio/member2')">CAM 1B</button>
-        <button class="cam-btn portfolio" onclick="selectCamera('CAM 2A', '/portfolio/member3')">CAM 2A</button>
-        <button class="cam-btn portfolio" onclick="selectCamera('CAM 2B', '/portfolio/member4')">CAM 2B</button>
+        <!-- Portfolio Links -->
+        <a th:href="@{/portfolio/josh}" class="cam-btn">CAM 1A</a>
+        <a th:href="@{/portfolio/ken}" class="cam-btn">CAM 1B</a>
+        <a th:href="@{/portfolio/klarc}" class="cam-btn">CAM 2A</a>
+        <a th:href="@{/portfolio/rey}" class="cam-btn">CAM 2B</a>
 
-        <!-- Jumpscares / Easter Eggs -->
-        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 3', 'Golden Freddy appeared!')">CAM 3</button>
-        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 4A', 'Honk the nose!')">CAM 4A</button>
-        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 5', 'IT\'S ME')">CAM 5</button>
-        <button class="cam-btn jumpscare" onclick="triggerJumpscare('CAM 6', 'Audio Signal Lost...')">CAM 6</button>
+        <!-- Server-Routed Jumpscare Links -->
+        <a th:href="@{/jumpscare/cam3}" class="cam-btn jumpscare">CAM 3</a>
+        <a th:href="@{/jumpscare/cam4a}" class="cam-btn jumpscare">CAM 4A</a>
+        <a th:href="@{/jumpscare/cam5}" class="cam-btn jumpscare">CAM 5</a>
     </div>
 </div>
 
