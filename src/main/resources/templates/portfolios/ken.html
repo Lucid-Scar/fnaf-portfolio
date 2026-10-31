@@ -2,13 +2,95 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - <span th:text="${memberName}"></span></title>
-    <link rel="stylesheet" th:href="@{/css/monitor.css}">
+    <title th:text="'Portfolio - ' + (${memberName} ?: 'Ken Chie Gomez')">Portfolio</title>
+    <link rel="stylesheet" th:href="@{/css/ken.css}">
 </head>
-<body style="padding: 40px;">
-<h1 th:text="${memberName}">Member Portfolio</h1>
-<p>Welcome to the portfolio page for <span th:text="${memberId}"></span>.</p>
-<br>
-<a href="/" style="color: #00ff00; font-size: 20px;">[ RETURN TO SECURITY ROOM ]</a>
+<body>
+<div class="wrap">
+
+    <span class="tag">CAM 1B - ONLINE</span>
+    <h1 th:text="${memberName} ?: 'Ken Chie Gomez'">KEN CHIE GOMEZ</h1>
+    <p class="sub">Night Shift Maintenance Technician &bull; Networking &amp; Cabling &bull; Software Development</p>
+
+    <div class="strip">
+    </div>
+
+    <div class="folder">
+        <div class="tab"><span th:text="${memberName} ?: 'NIGHT SHIFT MAINTENANCE TECHNICIAN'">Ken Chie Gomez</span></div>
+
+        <div class="pages">
+
+            <!-- file -->
+            <div class="box">
+                <h2>[ 01_Recruitment_Hire ]</h2>
+                <div class="profile">
+                    <img class="photo" th:src="@{/images/ken.png}" alt="Ken Chie Gomez">
+                    <div class="fields">
+                        <p><b>Name:</b> <span th:text="${memberName} ?: 'Ken Chie Gomez'">KEN CHIE GOMEZ</span></p>
+                        <p><b>Position:</b> Night Shift Maintenance Technician</p>
+                        <p><b>Shift:</b> 12 AM - 6 AM</p>
+                        <p><b>Status:</b> [HIRED]</p>
+                    </div>
+                </div>
+                <div class="background">
+                    <p><b>Subject Background:</b> 3rd Year Information Student at the Pamantasan ng Lungsod ng Maynila.</p>
+                    <p>Said to have both an understanding and experience in Networking and Software Development.</p>
+                    <p>Was told that he had a proficiency in cabling, fixing hardware, handling project and group management.</p>
+                </div>
+            </div>
+
+            <!-- projects -->
+            <div class="box">
+                <h2>[ 02_Subject_Projects ]</h2>
+                <div class="project">
+                    <h3>FacilityLink</h3>
+                    <p class="stack">Supabase, yan lang natatandaan ko legit</p>
+                    <p>Centralized database system for administrative tasks at the General Service Office.</p>
+                </div>
+                <div class="project">
+                    <h3>Metal Corrosion Estimation System</h3>
+                    <p class="stack">Machine Learning, Python, super maangas </p>
+                    <p>Web-based analysis system that estimates the level of corrosion and provides a maintenance option if applicable.</p>
+                </div>
+                <div class="project">
+                    <h3>Barangay Healthcare System</h3>
+                    <p class="stack">lowk nakalimutan ko techstack namin dito</p>
+                    <p>Makes the healthcare system easily accessible online, including applying for appointments.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- classified note -->
+        <div class="box classified">
+            <h2>[ 03_Classified_Note ]</h2>
+            <p>
+                <span class="bar w170"></span>
+                New guy is a
+                <span class="bar w150"></span>
+                just hope that he doesn't
+                <span class="bar w190"></span>
+                Considering his ability and proficiency in both cabling and hardware,
+                <span class="bar w90"></span>
+                <span class="bar w150"></span>
+                a Maintenance Technician, just make sure to
+                <span class="bar w80"></span>
+                <span class="bar w210"></span>
+                we
+                <span class="bar w100"></span>
+                knowing the
+                <span class="bar w130"></span>
+                establishment
+                <span class="bar w120"></span>
+                the public.
+            </p>
+        </div>
+    </div>
+
+    <div class="back">
+        <a href="/">[ RETURN TO SECURITY ROOM ]</a>
+    </div>
+
+</div>
 </body>
 </html>
