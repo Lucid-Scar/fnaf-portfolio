@@ -40,12 +40,12 @@ public class MonitorController {
             case "CAM4A" -> {
                 model.addAttribute("title", "CAM 04A - KITCHEN");
                 model.addAttribute("message", "hehe");
-                model.addAttribute("image", "/images/blluelobster.jpg");
+                model.addAttribute("image", "/images/bluelobster.jpg");
                 model.addAttribute("audio", "/audio/bluelobster.mp3");
             }
             case "CAM5" -> {
                 model.addAttribute("title", "CAM 05 - BACKSTAGE");
-                model.addAttribute("message", "nyaaahahaha na rickroll");
+                model.addAttribute("message", "sorry po hwahahaha");
                 model.addAttribute("videoUrl", "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1");
             }
             case "CAM6" -> {
