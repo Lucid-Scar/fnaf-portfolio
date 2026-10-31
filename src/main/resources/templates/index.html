@@ -9,7 +9,7 @@
 <div class="crt-overlay"></div>
 
 <div class="monitor-container">
-    <!-- HUD Overlay -->
+    <!-- HUD  -->
     <div class="hud top-right">
         <span id="clock">12 AM</span><br>
         <span class="subtext">NIGHT 1</span>
@@ -24,7 +24,7 @@
         <h1 class="camera-title" id="cam-title">CAM 1A - STAGE</h1>
     </div>
 
-    <!-- Camera Selection Map -->
+    <!-- Camera  -->
     <div class="map-layout">
         <!-- Portfolio Links -->
         <a th:href="@{/portfolio/josh}" class="cam-btn">CAM 1A</a>
@@ -32,7 +32,7 @@
         <a th:href="@{/portfolio/klarc}" class="cam-btn">CAM 2A</a>
         <a th:href="@{/portfolio/rey}" class="cam-btn">CAM 2B</a>
 
-        <!-- Server-Routed Jumpscare Links -->
+        <!-- Jumpscare Links -->
         <a th:href="@{/jumpscare/cam3}" class="cam-btn jumpscare">CAM 3</a>
         <a th:href="@{/jumpscare/cam4a}" class="cam-btn jumpscare">CAM 4A</a>
         <a th:href="@{/jumpscare/cam5}" class="cam-btn jumpscare">CAM 5</a>
@@ -40,13 +40,6 @@
     </div>
 </div>
 
-<!-- Jumpscare Modal Overlay -->
-<div id="jumpscare-modal" class="modal hidden">
-    <div class="modal-content">
-        <h2 id="jumpscare-text">SCREAM!</h2>
-        <button onclick="closeJumpscare()">CLOSE MONITOR</button>
-    </div>
-</div>
 
 <script th:src="@{/js/camera.js}"></script>
 </body>

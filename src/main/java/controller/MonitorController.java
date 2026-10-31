@@ -25,7 +25,7 @@ public class MonitorController {
         };
     }
 
-    // Jumpscare & Funny Scenario Server-Side Router
+    // Jumpscare\
     @GetMapping("/jumpscare/{cam}")
     public String triggerJumpscare(@PathVariable String cam, Model model) {
         String camera = cam.toUpperCase();
@@ -34,23 +34,19 @@ public class MonitorController {
             case "CAM3" -> {
                 model.addAttribute("title", "CAM 03 - GOLDEN FREDDY");
                 model.addAttribute("message", "IT'S ME");
-                model.addAttribute("image", "/images/golden-freddy.png");
-                model.addAttribute("audio", "/audio/scream.mp3");
+                model.addAttribute("image", "/images/frezzy.jpg");
+                model.addAttribute("audio", "/audio/frezzy.mp3");
             }
             case "CAM4A" -> {
                 model.addAttribute("title", "CAM 04A - KITCHEN");
-                model.addAttribute("message", "Chica is making pizza at 3 AM!");
-                model.addAttribute("image", "/images/chica-pizza.png");
-                model.addAttribute("audio", "/audio/kitchen-noise.mp3");
+                model.addAttribute("message", "hehe");
+                model.addAttribute("image", "/images/blluelobster.jpg");
+                model.addAttribute("audio", "/audio/bluelobster.mp3");
             }
             case "CAM5" -> {
                 model.addAttribute("title", "CAM 05 - BACKSTAGE");
-                model.addAttribute("message", "Never Gonna Give you up" +
-                        "Never Gonna let you down" +
-                        "Never gonna run around" +
-                        "and hurt youuuhhh.");
-                model.addAttribute("image", "/images/endo.png");
-                model.addAttribute("audio", "/audio/stare.mp3");
+                model.addAttribute("message", "nyaaahahaha na rickroll");
+                model.addAttribute("videoUrl", "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1");
             }
             case "CAM6" -> {
                 model.addAttribute("title", "CAM 06 - GENIUS");
@@ -59,7 +55,7 @@ public class MonitorController {
                         "Bu-bu-bugging\n" +
                         "Bu-bu-bugging");
                 model.addAttribute("image", "/images/bugging.png");
-                model.addAttribute("audio", "/audio/stare.mp3");
+                model.addAttribute("audio", "/audio/bugging.mp3");
             }
             default -> {
                 model.addAttribute("title", "CAM ?? - SIGNAL LOST");

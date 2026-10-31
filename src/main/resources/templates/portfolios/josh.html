@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAM 1A - Josh | Portfolio</title>
-    <!-- Base Monitor Styling + Custom Josh CSS -->
     <link rel="stylesheet" th:href="@{/css/monitor.css}">
     <link rel="stylesheet" th:href="@{/css/josh.css}">
 </head>
@@ -12,31 +11,25 @@
 <div class="crt-overlay"></div>
 
 <div class="terminal-container">
-    <!-- Header / Terminal Identity -->
     <header class="terminal-header">
         <div class="status-badge">CAM 1A - ONLINE</div>
         <h1>JOSH</h1>
         <p class="subtitle">IT Specialist • Networking & Hardware Diagnostics • Full-Stack Developer</p>
     </header>
 
-    <!-- System Diagnostic Bar -->
     <div class="sys-info-bar">
         <span>STATUS: TINATAMAD</span>
         <span>CLEARANCE: 3RD YEAR COLLEGE</span>
         <span>AIM: HIGH</span>
     </div>
 
-    <!-- Main Content Layout -->
     <main class="terminal-grid">
-
-        <!-- Section 1: About / Core Focus -->
         <section class="card">
             <h2>[ 01_ABOUT_ME ]</h2>
             <p>3rd-Year Information Technology undergraduate specializing in physical IT infrastructure, network design, and custom full-stack web application development.</p>
             <p>Experienced in component-level hardware troubleshooting, software troubleshooting, network configuration, and building database-backed web systems.</p>
         </section>
 
-        <!-- Section 2: Technical Specializations -->
         <section class="card">
             <h2>[ 02_CORE_SPECIALIZATIONS ]</h2>
             <ul class="spec-list">
@@ -46,7 +39,6 @@
             </ul>
         </section>
 
-        <!-- Section 3: Featured Projects -->
         <section class="card full-width">
             <h2>[ 03_FEATURED_PROJECTS ]</h2>
             <div class="projects-grid">
@@ -72,7 +64,6 @@
 
     </main>
 
-    <!-- Return Control -->
     <footer class="terminal-footer">
         <a th:href="@{/}" class="return-btn">&lt; RETURN TO SECURITY ROOM</a>
     </footer>

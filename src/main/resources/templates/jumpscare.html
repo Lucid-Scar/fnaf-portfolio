@@ -10,14 +10,27 @@
 
 <h1 th:text="${title}" style="font-size: 32px; letter-spacing: 2px;">CAMERA FEED</h1>
 
-<div style="margin: 30px auto;">
-    <img th:src="${image}" alt="Jumpscare" style="max-width: 500px; border: 4px solid red; box-shadow: 0 0 20px red;">
+<!-- IF CAM 5 (YouTube Embed) -->
+<div th:if="${videoUrl != null}" style="margin: 30px auto;">
+    <iframe width="640" height="360"
+            th:src="${videoUrl}"
+            title="Rick Roll Feed"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 4px solid red; box-shadow: 0 0 20px red;"
+            allowfullscreen>
+    </iframe>
+</div>
+
+<!-- ELSE (Standard Image + Audio Jumpscares) -->
+<div th:if="${videoUrl == null}">
+    <div style="margin: 30px auto;">
+        <img th:src="${image}" alt="Jumpscare" style="max-width: 500px; border: 4px solid red; box-shadow: 0 0 20px red;">
+    </div>
+    <audio autoplay th:src="${audio}"></audio>
 </div>
 
 <h2 th:text="${message}" style="color: #fff; text-shadow: 0 0 10px red;">SCENARIO TEXT</h2>
-
-<!-- Dynamic Audio Triggered directly by Spring model -->
-<audio autoplay th:src="${audio}"></audio>
 
 <br><br>
 <a th:href="@{/}" style="color: #00ff00; font-size: 22px; text-decoration: none; border: 2px solid #00ff00; padding: 10px 20px;">[ RETURN TO SECURITY ROOM ]</a>
