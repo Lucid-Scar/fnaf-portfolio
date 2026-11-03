@@ -6,7 +6,7 @@ body {
     overflow: hidden;
 }
 
-/* page fade in animations */
+/* page transition */
 @view-transition {
     navigation: auto;
 }
