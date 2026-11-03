@@ -3,70 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAM 1A - Josh | Portfolio</title>
+    <title>CAM 1A - Josh | Personnel File</title>
     <link rel="stylesheet" th:href="@{/css/monitor.css}">
     <link rel="stylesheet" th:href="@{/css/josh.css}">
 </head>
 <body>
 <div class="crt-overlay"></div>
 
-<div class="terminal-container">
-    <header class="terminal-header">
-        <div class="status-badge">CAM 1A - ONLINE</div>
-        <h1>JOSH</h1>
-        <p class="subtitle">IT Specialist • Networking & Hardware Diagnostics • Full-Stack Developer</p>
-    </header>
-
-    <div class="sys-info-bar">
-        <span>STATUS: TINATAMAD</span>
-        <span>CLEARANCE: 3RD YEAR COLLEGE</span>
-        <span>AIM: HIGH</span>
+<div class="folder-wrapper">
+    <!-- Top Manila Folder Tab -->
+    <div class="folder-tab">
+        <span class="tab-label">FAZBEAR ENT. // PERSONNEL FILE #001A</span>
+        <span class="confidential-stamp">CONFIDENTIAL</span>
     </div>
 
-    <main class="terminal-grid">
-        <section class="card">
-            <h2>[ 01_ABOUT_ME ]</h2>
-            <p>3rd-Year Information Technology undergraduate specializing in physical IT infrastructure, network design, and custom full-stack web application development.</p>
-            <p>Experienced in component-level hardware troubleshooting, software troubleshooting, network configuration, and building database-backed web systems.</p>
-        </section>
-
-        <section class="card">
-            <h2>[ 02_CORE_SPECIALIZATIONS ]</h2>
-            <ul class="spec-list">
-                <li><strong>Networking & Hardware:</strong> Diagnostics, Maintenance, System Assembly, Cisco Packet Tracer</li>
-                <li><strong>Software & Stack:</strong> Java (Spring Boot), JavaScript / Next.js, HTML5/CSS3, SQL (MySQL Workbench), Python, Ruby</li>
-                <li><strong>Systems & Tooling:</strong> Linux / Windows Admin, Shell Utilities, VS Code, Git Version Control</li>
-            </ul>
-        </section>
-
-        <section class="card full-width">
-            <h2>[ 03_FEATURED_PROJECTS ]</h2>
-            <div class="projects-grid">
-                <div class="project-box">
-                    <h3>Ano Tara?</h3>
-                    <span class="tech-tag">Next.js • FastAPI • Supabase • Python</span>
-                    <p>Multi-modal travel decision-support web application integrating machine learning models for lodging price forecasting and weather risk assessment.</p>
-                </div>
-
-                <div class="project-box">
-                    <h3>721 Sublimation</h3>
-                    <span class="tech-tag">Next.js • Tailwind • PayMongo • Blender</span>
-                    <p>E-commerce application featuring interactive apparel customization, live map delivery tracking, and payment gateway integration.</p>
-                </div>
-
-                <div class="project-box">
-                    <h3>Security Monitor Hub</h3>
-                    <span class="tech-tag">Java 25 • Spring Boot • Thymeleaf</span>
-                    <p>FNAF-themed interactive security camera hub routing multi-user portfolios and server-side interactive scenarios.</p>
-                </div>
+    <!-- Manila Folder Paper Body -->
+    <div class="folder-container">
+        <header class="folder-header">
+            <div class="applicant-photo">
+                <img th:src="@{/images/josh.jpg}" alt="Applicant Photo">
             </div>
-        </section>
 
-    </main>
+            <div class="header-details">
+                <div class="status-badge">CAM 1A - APPLICANT DOSSIER</div>
+                <h1 class="stamped-red">APPLICANT: JOSH</h1>
+                <p class="subtitle">IT Specialist • Networking &amp; Hardware Diagnostics • Full-Stack Developer</p>
+            </div>
+        </header>
 
-    <footer class="terminal-footer">
-        <a th:href="@{/}" class="return-btn">&lt; RETURN TO SECURITY ROOM</a>
-    </footer>
+        <div class="sys-info-bar">
+            <span><strong>STATUS:</strong> TINATAMAD</span>
+            <span><strong>CLEARANCE:</strong> 3RD YEAR COLLEGE</span>
+            <span><strong>AIM:</strong> HIGH</span>
+        </div>
+
+        <main class="terminal-grid">
+            <section class="card">
+                <h2 class="stamped-red">[ 01_ABOUT_APPLICANT ]</h2>
+                <p>3rd-Year Information Technology undergraduate specializing in physical IT infrastructure, network design, and custom full-stack web application development.</p>
+                <p>Experienced in component-level hardware troubleshooting, software troubleshooting, network configuration, and building database-backed web systems.</p>
+            </section>
+
+            <section class="card">
+                <h2 class="stamped-red">[ 02_QUALIFICATIONS ]</h2>
+                <ul class="spec-list">
+                    <li><strong>Networking &amp; Hardware:</strong> Diagnostics, Maintenance, System Assembly, Cisco Packet Tracer</li>
+                    <li><strong>Software &amp; Stack:</strong> Java (Spring Boot), JavaScript / Next.js, HTML5/CSS3, SQL (MySQL Workbench), Python, Ruby</li>
+                    <li><strong>Systems &amp; Tooling:</strong> Linux / Windows Admin, Shell Utilities, VS Code, Git Version Control</li>
+                </ul>
+            </section>
+
+            <section class="card full-width">
+                <h2 class="stamped-red">[ 03_RECORDED_PROJECTS ]</h2>
+                <div class="projects-grid">
+
+                    <div class="project-box">
+                        <h3 class="stamped-red">
+                            <a href="https://github.com/Lucid-Scar/Eco-Pulse.git" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Eco-Pulse ↗
+                            </a>
+                        </h3>
+                        <span class="tech-tag">TypeScript</span>
+                        <p>Static Website that showcases the current environmental risks as well as backed sources that provide alternative energy solutions.</p>
+                        <a href="https://github.com/Lucid-Scar/Eco-Pulse.git" target="_blank" rel="noopener noreferrer" class="project-btn">[ VIEW REPO ]</a>
+                    </div>
+
+                    <div class="project-box">
+                        <h3 class="stamped-red">
+                            <a href="https://721-sublimation-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                721-Sublimation ↗
+                            </a>
+                        </h3>
+                        <span class="tech-tag">Next.js • Tailwind • PayMongo • Blender</span>
+                        <p>E-commerce application featuring interactive apparel customization, live map delivery tracking, and payment gateway integration.</p>
+                        <a href="https://721-sublimation-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">[ VIEW PROJECT ]</a>
+                    </div>
+
+                    <div class="project-box">
+                        <h3 class="stamped-red">
+                            <a href="https://github.com/Lucid-Scar/Ruby-Linear-Regression-Calculator.git" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Linear Regression Calculator ↗
+                            </a>
+                        </h3>
+                        <span class="tech-tag">Ruby • HTML</span>
+                        <p>A Linear Regression simulator made purely from Ruby that also accepts csv inputs.</p>
+                        <a href="https://github.com/Lucid-Scar/Ruby-Linear-Regression-Calculator.git" target="_blank" rel="noopener noreferrer" class="project-btn">[ VIEW REPO ]</a>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="terminal-footer">
+            <a th:href="@{/}" class="return-btn">&lt; CLOSE FILE &amp; RETURN TO MONITOR</a>
+        </footer>
+    </div>
 </div>
 </body>
 </html>
