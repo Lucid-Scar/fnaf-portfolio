@@ -6,6 +6,24 @@ body {
     overflow: hidden;
 }
 
+/* page fade in animations */
+@view-transition {
+    navigation: auto;
+}
+
+body {
+    animation: pageFadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes pageFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* CRT Scanline Visual Effect */
 .crt-overlay {
     position: fixed;
@@ -34,6 +52,48 @@ body {
 
 .top-right { top: 20px; right: 40px; text-align: right; }
 .bottom-left { bottom: 20px; left: 40px; }
+
+/* FNAF Camera Return Bar (yung double vertical v na mahaba); specific ganyan siya para mukha siyang legit */
+.monitor-flip-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    max-width: 50vw;
+    height: 34px;
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid #888888;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 99;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+/* the double v icon itself */
+.monitor-flip-bar .flip-icon {
+    width: 100px;
+    height: 26px;
+    color: #999999;
+    transition: color 0.15s ease, filter 0.15s ease;
+}
+
+/* on hover (placeholder for now, di ko alam ano itsura non kapag on-hover sa mismong fnaf) */
+.monitor-flip-bar:hover {
+    border-color: #ffffff;
+    background: rgba(25, 25, 25, 0.95);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+.monitor-flip-bar:hover .flip-icon {
+    color: #ffffff;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+}
 
 /* Camera Map Layout */
 .map-layout {
@@ -85,4 +145,66 @@ body {
     padding: 40px;
     border: 4px solid #fff;
     text-align: center;
+}
+
+/* easter eggs */
+.easter-egg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* image properties in container */
+.easter-egg {
+    position: absolute;
+
+    /* size config for image (if need ibahin) */
+    width: 380px;
+    height: auto;
+
+    /* visibility & CRT look (filter) */
+    opacity: 0;
+    filter: grayscale(40%);
+}
+
+/* house image, 11 sec loop */
+.easter-egg.housemd {
+    animation: flashHouse 11s infinite ease-in-out;
+}
+
+/* spino image, 17 sec loop; delay added so it doesn't conflict w/ house */
+.easter-egg.spino {
+    animation: flashSpino 17s infinite ease-in-out 4s;
+}
+
+/* keyframes for house */
+@keyframes flashHouse {
+    0%, 93%, 97%, 100% {
+        opacity: 0;
+    }
+    /* flash visibility values between the loop; bigger number = more visible */
+    94%, 96% {
+        opacity: 0.2;
+        /* Frame visibility; chnage opac to increase visibility */
+
+    }
+}
+
+/* keyframes for spino */
+@keyframes flashSpino {
+    0%, 88%, 93%, 100% {
+        opacity: 0;
+    }
+    /* flash visibility values between the loop; bigger number = more visible */
+    89%, 92% {
+        opacity: 0.2;
+        /* Frame visibility; chnage opac to increase visibility */
+
+    }
 }

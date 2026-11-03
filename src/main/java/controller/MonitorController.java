@@ -8,7 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class MonitorController {
 
-    @GetMapping("/")
+    // Main Menu (this the new starting one)
+    @GetMapping({"/menu"})
+    public String showMenu() { return "menu"; }
+
+    // Security Cam
+    @GetMapping("/index")
     public String mainSecurityRoom() {
         return "index";
     }
@@ -25,7 +30,7 @@ public class MonitorController {
         };
     }
 
-    // Jumpscare\
+    // Jumpscare boo
     @GetMapping("/jumpscare/{cam}")
     public String triggerJumpscare(@PathVariable String cam, Model model) {
         String camera = cam.toUpperCase();

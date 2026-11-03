@@ -9,6 +9,13 @@
 <div class="crt-overlay"></div>
 
 <div class="monitor-container">
+
+    <!-- Easter Egg Container -->
+    <div class="easter-egg-container">
+        <img src="/images/housemd.jpg" class="easter-egg housemd" alt="Easter Egg House">
+        <img src="/images/spino.png" class="easter-egg spino" alt="Easter Egg Spino">
+    </div>
+
     <!-- HUD  -->
     <div class="hud top-right">
         <span id="clock">12 AM</span><br>
@@ -24,7 +31,15 @@
         <h1 class="camera-title" id="cam-title">CAM 1A - STAGE</h1>
     </div>
 
-    <!-- Camera  -->
+    <!-- FNAF Camera Return Bar (yung double vertical v na mahaba); specific ganyan siya para mukha siyang legit-->
+    <a th:href="@{/menu}" class="monitor-flip-bar" title="Exit Monitor / Main Menu">
+        <svg class="flip-icon" viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 25,7 L 60,15 L 95,7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 25,16 L 60,24 L 95,16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <!-- Camera Map Layout -->
     <div class="map-layout">
         <!-- Portfolio Links -->
         <a th:href="@{/portfolio/josh}" class="cam-btn">CAM 1A</a>
@@ -40,7 +55,7 @@
     </div>
 </div>
 
-
 <script th:src="@{/js/camera.js}"></script>
+
 </body>
 </html>
