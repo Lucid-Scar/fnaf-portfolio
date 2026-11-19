@@ -2,13 +2,186 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - <span th:text="${memberName}"></span></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+    <title>Fazbear Industries | Personnel File</title>
     <link rel="stylesheet" th:href="@{/css/monitor.css}">
+    <link rel="stylesheet" th:href="@{/css/klarc.css}">
+    <script th:src="@{/js/klarc-recruitment.js}" defer></script>
 </head>
-<body style="padding: 40px;">
-<h1 th:text="${memberName}">Member Portfolio</h1>
-<p>Welcome to the portfolio page for <span th:text="${memberId}"></span>.</p>
-<br>
-<a href="/" style="color: #00ff00; font-size: 20px;">[ RETURN TO SECURITY ROOM ]</a>
+<body class="klarc-page">
+<div class="crt-overlay" aria-hidden="true"></div>
+
+<section class="recruitment-intro" id="recruitment-intro" role="dialog" aria-modal="true" aria-labelledby="sequence-title">
+    <h2 class="visually-hidden" id="sequence-title">Fazbear Industries recruitment bag</h2>
+    <div class="intro-topline">
+        <span>FAZBEAR INDUSTRIES</span>
+        <span>NEW PERSONNEL INTAKE <i>///</i> 01</span>
+    </div>
+    <div class="intro-stage" aria-hidden="true">
+        <div class="stage-crosshair"></div>
+        <div class="recruitment-bag" id="recruitment-bag">
+            <div class="bag-strap"></div>
+            <div class="bag-zipper"></div>
+            <div class="bag-flap"></div>
+            <div class="recruitment-file">
+                <span class="file-corner">FI / HR</span>
+                <span class="file-monogram">FZ</span>
+                <span class="file-candidate">KLARC</span>
+                <span class="file-serial">CANDIDATE DOSSIER · FZ-KL-02A</span>
+            </div>
+            <span class="bag-label">PERSONNEL<br>ACQUISITION</span>
+        </div>
+        <p class="sequence-caption">PERSONNEL BAG <span>//</span> SEALED</p>
+        <div class="sequence-progress"><span></span></div>
+    </div>
+    <div class="intro-bottomline">
+        <span class="sequence-status" id="sequence-status" role="status" aria-live="polite" tabindex="-1">SEALED // OPEN TO BEGIN</span>
+        <div class="sequence-actions">
+            <a class="sequence-return" id="sequence-return" th:href="@{/index}">RETURN TO CAMERAS</a>
+            <button class="sequence-action" id="open-bag" type="button" aria-controls="recruitment-bag"><span>01</span> OPEN BAG</button>
+            <button class="sequence-action" id="view-file" type="button" aria-controls="dossier" hidden><span>02</span> VIEW PERSONNEL FILE</button>
+        </div>
+    </div>
+</section>
+
+<div class="page-shell" hidden>
+    <nav class="utility-nav" aria-label="Portfolio navigation">
+        <a th:href="@{/index}" class="back-link"><span aria-hidden="true">&larr;</span> Return to cameras</a>
+        <span class="system-label">FAZBEAR INDUSTRIES <i>///</i> TALENT ARCHIVE</span>
+    </nav>
+
+    <main class="dossier-shell" id="dossier">
+        <div class="folder-tab" aria-hidden="true">
+            <span>FAZBEAR ENTERTAINMENT</span>
+            <strong>PERSONNEL FILE #002A</strong>
+        </div>
+        <header class="dossier-header">
+            <div class="header-topline">
+                <span class="eyebrow">PERSONNEL RECRUITMENT DIVISION</span>
+                <span class="file-number">FILE NO. <strong>FZ-KL-002A</strong></span>
+            </div>
+
+            <div class="identity-block">
+                <div class="identity-mark">
+                    <img th:src="@{/images/klarc.jpg}" alt="Portrait of Klarc">
+                    <i aria-hidden="true"></i>
+                </div>
+                <div class="identity-copy">
+                    <p class="record-type">CANDIDATE PORTFOLIO <span>//</span> INTERNAL USE</p>
+                    <h1>KLARC</h1>
+                    <p class="role-line"> IT SPECIALIST / BARISTA</p>
+                </div>
+                <div class="status-stamp">
+                    <span>RECRUITMENT</span>
+                    <strong>IN REVIEW</strong>
+                </div>
+            </div>
+
+            <dl class="metadata-strip">
+                <div>
+                    <dt>DIVISION</dt>
+                    <dd>INFORMATION TECHNOLOGY</dd>
+                </div>
+                <div>
+                    <dt>EDUCATION</dt>
+                    <dd>3RD YEAR COLLEGE</dd>
+                </div>
+                <div>
+                    <dt>STATUS</dt>
+                    <dd>ALIVE</dd>
+                </div>
+            </dl>
+        </header>
+
+        <div class="record-grid">
+            <section class="record-panel overview-panel">
+                <div class="panel-heading">
+                    <span class="section-number">01</span>
+                    <h2>Candidate Overview</h2>
+                </div>
+                <p class="placeholder-copy">Passionate BSIT Student from Pamantasan ng Lungsod ng Maynila seeking opportunities and work experience. Driven by the desire to imrove and learn more from like minded individuals that share the same goals, open to collaboration and seek opportunities to leverage my experience and discover my strengths in developing while contributing to meaningful results.
+</p>
+            </section>
+
+            <section class="record-panel skills-panel">
+                <div class="panel-heading">
+                    <span class="section-number">02</span>
+                    <h2>Operator Skills</h2>
+                </div>
+                <ul class="aptitude-list">
+                    <li><span>01</span><strong>Computer Hardware Maintenance</strong><em>PRIMARY</em></li>
+                    <li><span>02</span><strong>Network Administration</strong><em>SECONDARY</em></li>
+                    <li><span>03</span><strong>Frontend Development</strong><em>SUPPORT</em></li>
+                    <li><span>04</span><strong>Artificial Intelligence</strong><em>ULTIMATE</em></li>
+                </ul>
+            </section>
+
+            <section class="record-panel projects-panel">
+                <div class="panel-heading">
+                    <span class="section-number">03</span>
+                    <h2>Project Records</h2>
+                    <span class="panel-aside">PROJECT ARCHIVE</span>
+                </div>
+                <div class="project-list">
+                    <article class="project-record">
+                        <div class="project-index">REC. 001</div>
+                        <div>
+                            <h3>[ FacilityLink: A Centralized Inventory System with DSS-Driven predictive stock analytics for the General Service Office of the Pamantasan ng Lungsod ng Maynila ]</h3>
+                            <p>An Inventory Management System designed to streamline operations and improve decision-making through data-driven insights. Deployed locally within the institution.</p>
+                            <span class="project-tech">React.js / Node.js / PostgreSQL</span>
+                        </div>
+                        <span class="record-arrow" aria-hidden="true">&nearr;</span>
+                    </article>
+                    <article class="project-record">
+                        <div class="project-index">REC. 002</div>
+                        <div>
+                            <h3>[ Web Based Image Analysis for Metal Corrosion Estimation and Maintenance Priority Classification ]</h3>
+                            <p>An image analysis system designed to detect and quantify metal corrosion using web-based technologies tailored for site engineers and inspectors. Implemented for research purposes.</p>
+                            <span class="project-tech">Python / OpenCV / Yolo</span>
+                        </div>
+                        <span class="record-arrow" aria-hidden="true">&nearr;</span>
+                    </article>
+                    <article class="project-record">
+                        <div class="project-index">REC. 003</div>
+                        <div>
+                            <h3>[ HealthSync: An Automated Appointment System For Barangay Healthcare Services ]</h3>
+                            <p>An automated appointment system designed to streamline healthcare service delivery in barangays, improving accessibility and efficiency for both patients and healthcare providers.</p>
+                            <span class="project-tech">React.js / Node.js / SQL</span>
+                        </div>
+                        <span class="record-arrow" aria-hidden="true">&nearr;</span>
+                    </article>
+                </div>
+            </section>
+
+            <section class="record-panel contact-panel">
+                <div class="panel-heading">
+                    <span class="section-number">04</span>
+                    <h2>Contact &amp; References</h2>
+                </div>
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:klarcacubacub@gmail.com">klarcacubacub@gmail.com</a></li>
+                    <li>Contact no.: <a href="tel:09765579598">09765579598</a></li>
+                    <li>IGN: Metakashimi</li>
+                </ul>
+            </section>
+            <section class="record-panel redacted-space" aria-labelledby="criminal-record-heading">
+                <div class="panel-heading">
+                    <span class="section-number">05</span>
+                    <h2 id="criminal-record-heading">Criminal Record</h2>
+                </div>
+                <div class="redacted-stamp" aria-hidden="true">
+                    <span>[REDACTED]</span>
+                </div>
+            </section>
+        </div>
+
+        <footer class="dossier-footer">
+            <span>FAZBEAR ENTERTAINMENT <i>///</i> PERSONNEL SYSTEMS</span>
+            <a th:href="@{/index}" class="file-return-link">&lt; CLOSE FILE &amp; RETURN TO CAMERAS</a>
+            <span>END OF FILE <b>■</b></span>
+        </footer>
+    </main>
+</div>
 </body>
 </html>
