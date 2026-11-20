@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" th:content="|120;url=@{/six-am}|">
     <title>Security Camera Monitor - Night 1</title>
     <link rel="stylesheet" th:href="@{/css/monitor.css}">
 </head>
@@ -18,7 +19,12 @@
 
     <!-- HUD  -->
     <div class="hud top-right">
-        <span id="clock">12 AM</span><br>
+        <div id="clock" role="timer" aria-label="Night shift clock">
+            <div class="clock-hours">
+                <div>12 AM</div><div>1 AM</div><div>2 AM</div><div>3 AM</div>
+                <div>4 AM</div><div>5 AM</div><div>6 AM</div>
+            </div>
+        </div>
         <span class="subtext">NIGHT 1</span>
     </div>
 

@@ -51,6 +51,20 @@ body {
 }
 
 .top-right { top: 20px; right: 40px; text-align: right; }
+#clock {
+    height: 1.2em;
+    line-height: 1.2em;
+    overflow: hidden;
+}
+
+.clock-hours {
+    animation: nightClock 120s steps(6, end) forwards;
+}
+
+@keyframes nightClock {
+    to { transform: translateY(-7.2em); }
+}
+
 .bottom-left { bottom: 20px; left: 40px; }
 
 /* FNAF Camera Return Bar (yung double vertical v na mahaba); specific ganyan siya para mukha siyang legit */

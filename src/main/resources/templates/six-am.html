@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The ending clip runs for 37.54 seconds. -->
+    <meta http-equiv="refresh" th:content="|38;url=@{/redacted/menu.html}|">
+    <title>6 AM - Night 1</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100dvh;
+            display: grid;
+            place-items: center;
+            background: #000;
+            color: #fff;
+            font-family: "Courier New", monospace;
+        }
+        video { display: block; width: 100%; height: 100dvh; object-fit: contain; }
+    </style>
+</head>
+<body>
+<video autoplay playsinline th:src="@{/images/{file}(file='6 AM.mp4')}" aria-label="6 AM - Night 1 ending"></video>
+</body>
+</html>

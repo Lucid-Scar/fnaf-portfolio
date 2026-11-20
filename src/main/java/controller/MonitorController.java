@@ -1,5 +1,7 @@
 package com.example.fnaf.controller;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,18 +11,42 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class MonitorController {
 
     // Main Menu (this the new starting one)
-    @GetMapping({"/menu"})
-    public String showMenu() { return "menu"; }
+    @GetMapping({"/", "/menu"})
+    public String showMenu(HttpServletResponse response) {
+        setMonitorOpen(response, false);
+        return "menu";
+    }
 
     // Security Cam
     @GetMapping("/index")
-    public String mainSecurityRoom() {
+    public String mainSecurityRoom(HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-store");
+        setMonitorOpen(response, true);
         return "index";
+    }
+
+    // Changing this cookie on camera entry also evicts the no-store monitor
+    // from Chromium's back/forward cache, so Back starts a fresh shift.
+    private void setMonitorOpen(HttpServletResponse response, boolean open) {
+        Cookie cookie = new Cookie("monitorOpen", "1");
+        cookie.setPath("/");
+        cookie.setHttpOnly(true);
+        if (!open) {
+            cookie.setMaxAge(0);
+        }
+        response.addCookie(cookie);
+    }
+
+    @GetMapping("/six-am")
+    public String endNight(HttpServletResponse response) {
+        setMonitorOpen(response, false);
+        return "six-am";
     }
 
     // Portfolio Routing
     @GetMapping("/portfolio/{id}")
-    public String viewPortfolio(@PathVariable String id) {
+    public String viewPortfolio(@PathVariable String id, HttpServletResponse response) {
+        setMonitorOpen(response, false);
         return switch (id.toLowerCase()) {
             case "josh" -> "portfolios/josh";
             case "ken" -> "portfolios/ken";
@@ -32,7 +58,8 @@ public class MonitorController {
 
     // Jumpscare boo
     @GetMapping("/jumpscare/{cam}")
-    public String triggerJumpscare(@PathVariable String cam, Model model) {
+    public String triggerJumpscare(@PathVariable String cam, Model model, HttpServletResponse response) {
+        setMonitorOpen(response, false);
         String camera = cam.toUpperCase();
 
         switch (camera) {

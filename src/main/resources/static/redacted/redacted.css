@@ -1,0 +1,54 @@
+.menu-container::before {
+    background: repeating-linear-gradient(0deg, #090909 0 3px, #111 3px 4px);
+}
+
+.cover-stamp {
+    position: absolute;
+    z-index: -1;
+    top: 42%;
+    right: 6%;
+    padding: 0.2em 0.4em;
+    border: 0.08em solid;
+    color: #aaa;
+    background: #080808;
+    font-size: clamp(1.4rem, 5vw, 5rem);
+    font-weight: bold;
+    transform: rotate(-6deg);
+}
+
+.blocked-photo, .blackout, .blocked-media {
+    background: #141414;
+    color: #ddd;
+    font-family: "Courier New", monospace;
+}
+
+.blocked-photo {
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+}
+
+.applicant-photo .blocked-photo { width: 110px; height: 130px; }
+.identity-mark .blocked-photo { width: 100%; height: 100%; }
+.blackout { padding: 0.4rem 0.75rem; }
+
+.closed-feed {
+    min-height: 100dvh;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    place-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.closed-feed h1 { margin: 0; }
+.closed-feed a { padding: 0.5rem; color: #ddd; }
+.closed-feed img { max-width: 100%; max-height: 65dvh; }
+.blocked-media {
+    padding: 0.5em 1em;
+    border: 2px solid;
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    font-weight: bold;
+}
