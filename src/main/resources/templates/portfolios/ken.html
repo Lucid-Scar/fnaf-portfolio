@@ -1,96 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="'Portfolio - ' + (${memberName} ?: 'Ken Chie Gomez')">Portfolio</title>
-    <link rel="stylesheet" th:href="@{/css/ken.css}">
-</head>
-<body>
-<div class="wrap">
-
-    <span class="tag">CAM 1B - ONLINE</span>
-    <h1 th:text="${memberName} ?: 'Ken Chie Gomez'">KEN CHIE GOMEZ</h1>
-    <p class="sub">Night Shift Maintenance Technician &bull; Networking &amp; Cabling &bull; Software Development</p>
-
-    <div class="strip">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title
+      th:text="'Operator Dossier - ' + (${memberName} ?: 'Ken Chie Gomez')"
+    >
+      Operator Dossier
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/css/ken.css}" />
+  </head>
+  <body>
+    <!-- based on arknights endfield; im a washed goat on that game -->
+    <div class="ef-backdrop" aria-hidden="true">
+      <div class="ef-sky-glow"></div>
+      <div class="ef-spire-silhouette"></div>
+      <div class="ef-topo-grid"></div>
+      <div class="ef-scanlines"></div>
     </div>
 
-    <div class="folder">
-        <div class="tab"><span th:text="${memberName} ?: 'NIGHT SHIFT MAINTENANCE TECHNICIAN'">Ken Chie Gomez</span></div>
-
-        <div class="pages">
-
-            <!-- file -->
-            <div class="box">
-                <h2>[ 01_Recruitment_Hire ]</h2>
-                <div class="profile">
-                    <img class="photo" th:src="@{/images/ken.png}" alt="Ken Chie Gomez">
-                    <div class="fields">
-                        <p><b>Name:</b> <span th:text="${memberName} ?: 'Ken Chie Gomez'">KEN CHIE GOMEZ</span></p>
-                        <p><b>Position:</b> Night Shift Maintenance Technician</p>
-                        <p><b>Shift:</b> 12 AM - 6 AM</p>
-                        <p><b>Status:</b> [HIRED]</p>
-                    </div>
-                </div>
-                <div class="background">
-                    <p><b>Subject Background:</b> 3rd Year Information Student at the Pamantasan ng Lungsod ng Maynila.</p>
-                    <p>Said to have both an understanding and experience in Networking and Software Development.</p>
-                    <p>Was told that he had a proficiency in cabling, fixing hardware, handling project and group management.</p>
-                </div>
-            </div>
-
-            <!-- projects -->
-            <div class="box">
-                <h2>[ 02_Subject_Projects ]</h2>
-                <div class="project">
-                    <h3>FacilityLink</h3>
-                    <p class="stack">Supabase, yan lang natatandaan ko legit</p>
-                    <p>Centralized database system for administrative tasks at the General Service Office.</p>
-                </div>
-                <div class="project">
-                    <h3>Metal Corrosion Estimation System</h3>
-                    <p class="stack">Machine Learning, Python, super maangas </p>
-                    <p>Web-based analysis system that estimates the level of corrosion and provides a maintenance option if applicable.</p>
-                </div>
-                <div class="project">
-                    <h3>Barangay Healthcare System</h3>
-                    <p class="stack">lowk nakalimutan ko techstack namin dito</p>
-                    <p>Makes the healthcare system easily accessible online, including applying for appointments.</p>
-                </div>
-            </div>
-
+    <!-- main profile window -->
+    <main class="ef-frame">
+      <!-- header -->
+      <header class="ef-topbar">
+        <div class="ef-system-tag">
+          <span class="ef-dot"></span>
+          <span>CAM 1B — ONLINE // PERSONNEL DOSSIER</span>
         </div>
+        <div class="ef-system-meta">
+          <span>PLM-IT // DIV. MAINTENANCE</span>
+          <span class="ef-chevrons">&gt;&gt;&gt;</span>
+        </div>
+      </header>
 
-        <!-- classified note -->
-        <div class="box classified">
-            <h2>[ 03_Classified_Note ]</h2>
-            <p>
-                <span class="bar w170"></span>
-                New guy is a
-                <span class="bar w150"></span>
-                just hope that he doesn't
-                <span class="bar w190"></span>
-                Considering his ability and proficiency in both cabling and hardware,
-                <span class="bar w90"></span>
-                <span class="bar w150"></span>
-                a Maintenance Technician, just make sure to
-                <span class="bar w80"></span>
-                <span class="bar w210"></span>
-                we
-                <span class="bar w100"></span>
-                knowing the
-                <span class="bar w130"></span>
-                establishment
-                <span class="bar w120"></span>
-                the public.
+      <!-- column grid (divided to left n right) -->
+      <div class="ef-content-grid">
+        <!-- left column -->
+        <section class="ef-left-col">
+          <!-- 1; profile pic and name, included also links hahahaha -->
+          <div class="ef-identity-block">
+            <div class="ef-node-marker"></div>
+            <a
+              class="ef-avatar-frame"
+              href="https://youtu.be/sKglSPmgQnY"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the secret YouTube video"
+            >
+              <img
+                class="ef-avatar"
+                th:src="@{/images/ken.png}"
+                alt="Ken Chie Gomez"
+              />
+              <span class="ef-corner tl"></span>
+              <span class="ef-corner br"></span>
+            </a>
+
+            <div class="ef-name-group">
+              <div class="ef-name-row">
+                <h1
+                  class="ef-fullname"
+                  th:text="${memberName} ?: 'Ken Chie Gomez'"
+                >
+                  Ken Chie Gomez
+                </h1>
+                <div class="ef-badge-strip">
+                  <span class="ef-role-badge">
+                    <svg
+                      viewBox="0 0 16 16"
+                      width="12"
+                      height="12"
+                      fill="currentColor"
+                    >
+                      <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" />
+                    </svg>
+                    TECH
+                  </span>
+                  <span class="ef-tier-badge">3RD YR</span>
+                </div>
+              </div>
+              <p class="ef-subtitle">
+                <a
+                  class="ef-subtitle-link"
+                  href="https://www.instagram.com/coastiel/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                >
+                &bull;
+                <a
+                  class="ef-subtitle-link"
+                  href="mailto:kcgomez012006@gmail.com"
+                  >Gmail</a
+                >
+                &bull; Surciel
+              </p>
+            </div>
+          </div>
+
+          <!-- 2; position and shift -->
+          <div class="ef-stats-bars">
+            <div class="ef-node-marker"></div>
+            <div class="ef-hud-bar">
+              <div class="ef-bar-label">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon
+                    points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"
+                  />
+                  <line x1="12" y1="22" x2="12" y2="15.5" />
+                  <polyline points="22 8.5 12 15.5 2 8.5" />
+                </svg>
+                <span>Position</span>
+              </div>
+              <span class="ef-bar-value"
+                >Night Shift Maintenance Technician</span
+              >
+            </div>
+
+            <div class="ef-hud-bar">
+              <div class="ef-bar-label">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <polyline points="12 7 12 12 15 15" />
+                </svg>
+                <span>Shift</span>
+              </div>
+              <span class="ef-bar-value ef-mono">12 AM &ndash; 6 AM</span>
+            </div>
+          </div>
+
+          <!-- 3; hired section -->
+          <div class="ef-hired-banner">
+            <div class="ef-banner-tab">RECRUITMENT_STATUS // 01</div>
+            <div class="ef-banner-body">
+              <div class="ef-emblem">
+                <svg
+                  viewBox="0 0 48 48"
+                  width="42"
+                  height="42"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon
+                    points="24,4 42,14 42,34 24,44 6,34 6,14"
+                    stroke-opacity="0.85"
+                  />
+                  <polygon
+                    points="24,11 35,17.5 35,30.5 24,37 13,30.5 13,17.5"
+                    fill="rgba(255,255,255,0.08)"
+                  />
+                  <polyline
+                    points="18,24 22.5,28.5 31,19.5"
+                    stroke="#ff7a1a"
+                    stroke-width="3"
+                  />
+                </svg>
+              </div>
+              <div class="ef-banner-text">
+                <div class="ef-hired-title">HIRED</div>
+                <div class="ef-hired-sub">
+                  in actuality, pinasok lang yan ni josh
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4; subject background -->
+          <div class="ef-background-section">
+            <div class="ef-node-marker"></div>
+
+            <!-- mah top 3 specializations aye -->
+            <div class="ef-kpi-row">
+              <div class="ef-kpi-card">
+                <span class="ef-kpi-skill">Network &amp; Cabling</span>
+              </div>
+              <div class="ef-kpi-card">
+                <span class="ef-kpi-skill">Software Developer</span>
+              </div>
+              <div class="ef-kpi-card">
+                <span class="ef-kpi-skill">Hardware Operator</span>
+              </div>
+            </div>
+
+            <!-- Subject Background -->
+            <div class="ef-summary-header">
+              <span class="ef-orange-pill"></span>
+              <h2>Subject Background</h2>
+            </div>
+
+            <div class="ef-bio-box">
+              <p>
+                3rd Year Information Technology Student at the
+                <strong>Pamantasan ng Lungsod ng Maynila</strong>. Said to have
+                both an understanding and experience in
+                <strong>Networking</strong> and
+                <strong>Software Development</strong>. Proficient in
+                <strong>cabling</strong>, <strong>fixing hardware</strong>, and
+                handling <strong>project and group management</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- right column -->
+        <aside class="ef-right-col">
+          <!-- SUBJECT PROJECTS SECTION -->
+          <div class="ef-projects-panel">
+            <div class="ef-panel-header">
+              <div class="ef-title-wrap">
+                <span class="ef-node-inline"></span>
+                <h2>02 // SUBJECT PROJECTS</h2>
+              </div>
+              <span class="ef-archive-count">03 ARCHIVES</span>
+            </div>
+
+            <div class="ef-project-list">
+              <article class="ef-project-card">
+                <div class="ef-proj-top">
+                  <span class="ef-proj-id">PRJ-01</span>
+                  <h3>
+                    <a
+                      href="https://github.com/Surciel/FacilityLink-System-Architecture-Design-"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >FacilityLink</a
+                    >
+                  </h3>
+                </div>
+                <p class="ef-proj-stack">
+                  Supabase, yan lang natatandaan ko legit
+                </p>
+                <p class="ef-proj-desc">
+                  Centralized database system for administrative tasks at the
+                  General Service Office.
+                </p>
+              </article>
+
+              <article class="ef-project-card">
+                <div class="ef-proj-top">
+                  <span class="ef-proj-id">PRJ-02</span>
+                  <h3>
+                    <a
+                      href="https://github.com/Surciel/MetalErosion"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Metal Corrosion Estimation System</a
+                    >
+                  </h3>
+                </div>
+                <p class="ef-proj-stack">
+                  Machine Learning, Python, super maangas
+                </p>
+                <p class="ef-proj-desc">
+                  Web-based analysis system that estimates the level of
+                  corrosion and provides a maintenance option if applicable.
+                </p>
+              </article>
+
+              <article class="ef-project-card">
+                <div class="ef-proj-top">
+                  <span class="ef-proj-id">PRJ-03</span>
+                  <h3>
+                    <a
+                      href="https://github.com/Surciel/HealthCare-Appointment-System"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Barangay Healthcare System</a
+                    >
+                  </h3>
+                </div>
+                <p class="ef-proj-stack">
+                  lowk nakalimutan ko techstack namin dito
+                </p>
+                <p class="ef-proj-desc">
+                  Makes the healthcare system easily accessible online,
+                  including applying for appointments.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <!-- classified note; genuinely ginawa ko siya sa canva pero nakalimutan ko kung ano yung text w/o redacted AHSAHAHHAH -->
+          <div class="ef-classified-panel">
+            <div class="ef-classified-header">
+              <span class="ef-warn-badge"
+                >RESTRICTED // 03_CLASSIFIED_NOTE</span
+              >
+              <span class="ef-cipher-code">AET-IT33</span>
+            </div>
+            <p class="ef-redacted-copy">
+              <span class="ef-redact w-lg" aria-hidden="true"></span>
+              New guy is a
+              <span class="ef-redact w-md" aria-hidden="true"></span>
+              just hope that he doesn't
+              <span class="ef-redact w-lg" aria-hidden="true"></span>
+              Considering his ability and proficiency in both cabling and
+              hardware,
+              <span class="ef-redact w-sm" aria-hidden="true"></span>
+              <span class="ef-redact w-md" aria-hidden="true"></span>
+              a Maintenance Technician, just make sure to
+              <span class="ef-redact w-sm" aria-hidden="true"></span>
+              <span class="ef-redact w-xl" aria-hidden="true"></span>
+              we
+              <span class="ef-redact w-sm" aria-hidden="true"></span>
+              knowing the
+              <span class="ef-redact w-md" aria-hidden="true"></span>
+              establishment
+              <span class="ef-redact w-md" aria-hidden="true"></span>
+              the public.
             </p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- footer and return to sec cams -->
+      <footer class="ef-footer-bar">
+        <div class="ef-anchor-point">
+          <span class="ef-anchor-label">fredy fazber har har har</span>
+          <span class="ef-anchor-arrows">&gt;&gt;&gt;</span>
         </div>
-    </div>
 
-    <div class="back">
-        <a th:href="@{/index}">[ RETURN TO SECURITY ROOM ]</a>
-    </div>
+        <div class="ef-orange-line"></div>
 
-</div>
-</body>
+        <a class="ef-return-card" th:href="@{/index}">
+          <span class="ef-quote-mark tl">&ldquo;</span>
+          <span class="ef-return-label">RETURN TO SECURITY ROOM</span>
+          <span class="ef-quote-mark br">&rdquo;</span>
+        </a>
+      </footer>
+    </main>
+  </body>
 </html>

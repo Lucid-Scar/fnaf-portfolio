@@ -1,11 +1,12 @@
 package com.example.fnaf.controller;
 
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class MonitorController {
@@ -93,9 +94,9 @@ public class MonitorController {
                 return "cam7";
             }
             case "CAM8" -> {
-                model.addAttribute("title", "CAM 08 - STORAGE");
-                model.addAttribute("message", "That was definitely not an animatronic.");
-                model.addAttribute("image", "/images/spino.png");
+                model.addAttribute("title", "CAM 08 - GA201");
+                model.addAttribute("message", "Nov 13, 2026, 1PM.");
+                model.addAttribute("image", "/images/godhelpus.gif");
             }
             default -> {
                 model.addAttribute("title", "CAM ?? - SIGNAL LOST");
