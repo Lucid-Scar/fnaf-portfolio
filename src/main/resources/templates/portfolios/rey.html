@@ -2,13 +2,44 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - <span th:text="${memberName}"></span></title>
-    <link rel="stylesheet" th:href="@{/css/monitor.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rey | The Night Shift</title>
+    <link rel="stylesheet" href="../../static/css/rey.css" th:href="@{/css/rey.css}">
 </head>
-<body style="padding: 40px;">
-<h1 th:text="${memberName}">Member Portfolio</h1>
-<p>Welcome to the portfolio page for <span th:text="${memberId}"></span>.</p>
-<br>
-<a href="/" style="color: #00ff00; font-size: 20px;">[ RETURN TO SECURITY ROOM ]</a>
+<body>
+<main class="newspaper">
+    <header class="masthead">
+        <span>Cam 2B</span>
+        <strong>The Night Shift</strong>
+        <span>Late edition</span>
+    </header>
+
+    <article>
+        <h1>On The Run</h1>
+        <h2>An Intruder</h2>
+
+        <div class="story">
+            <figure>
+                <div class="portrait">
+                    <img src="../../static/images/rey.jfif" th:src="@{/images/rey.jfif}"
+                         alt="Close-up of Adrian Louis D. Rey">
+                    <img class="intruder" src="../../static/images/intruder.jpg" th:src="@{/images/intruder.jpg}"
+                         alt="">
+                </div>
+                <figcaption>Adrian Louis D. Rey</figcaption>
+            </figure>
+
+            <div>
+                <p class="byline">By Rey</p>
+                <p>Currently a 3rd-Year IT student at Pamantasan ng Lungsod ng Maynila. Specializes in Mathematical subjects(why are you even here gng), dabble around networking especially networking that requires hardwares, and would look to experience robotics(yung nagsasalita daw sabi ni sir).</p>
+                <p>His recent projects that were also collaborated with the people in this establishment included FacilityLink, centralized system for administrative tasks at the General Service Office. Metal Corrosion Estimation System(partially). And Baranggay Healthcare System, ease of online appointments.</p>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <a href="/index" th:href="@{/index}">Return to security room</a>
+    </footer>
+</main>
 </body>
 </html>

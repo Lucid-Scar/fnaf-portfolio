@@ -62,6 +62,14 @@ public class MonitorController {
                 model.addAttribute("image", "/images/bugging.png");
                 model.addAttribute("audio", "/audio/bugging.mp3");
             }
+            case "CAM7" -> {
+                return "cam7";
+            }
+            case "CAM8" -> {
+                model.addAttribute("title", "CAM 08 - STORAGE");
+                model.addAttribute("message", "That was definitely not an animatronic.");
+                model.addAttribute("image", "/images/spino.png");
+            }
             default -> {
                 model.addAttribute("title", "CAM ?? - SIGNAL LOST");
                 model.addAttribute("message", "Nothing but static...");

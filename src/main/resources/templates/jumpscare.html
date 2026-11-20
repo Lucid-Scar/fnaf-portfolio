@@ -25,9 +25,9 @@
 <!-- ELSE  -->
 <div th:if="${videoUrl == null}">
     <div style="margin: 30px auto;">
-        <img th:src="${image}" alt="Jumpscare" style="max-width: 500px; border: 4px solid red; box-shadow: 0 0 20px red;">
+        <img th:src="${image}" alt="Jumpscare" style="max-width: min(500px, 90vw); max-height: 45vh; border: 4px solid red; box-shadow: 0 0 20px red;">
     </div>
-    <audio autoplay th:src="${audio}"></audio>
+    <audio th:if="${audio != null}" autoplay th:src="${audio}"></audio>
 </div>
 
 <h2 th:text="${message}" style="color: #fff; text-shadow: 0 0 10px red;">SCENARIO TEXT</h2>

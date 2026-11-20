@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 32px 16px;
+    background: #bdbbb5;
+    color: #211f1c;
+    font-family: "Courier New", monospace;
+}
+
+.newspaper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #eeece5;
+    border: 1px solid;
+}
+
+.masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 4px double;
+}
+
+.masthead strong {
+    font: bold 2rem Georgia, serif;
+}
+
+.masthead span, .byline, footer {
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+article {
+    margin: 14px 0;
+    border: 1px solid;
+}
+
+h1 {
+    margin: 0;
+    padding: 8px;
+    background: #211f1c;
+    color: #eeece5;
+    font-size: clamp(2.75rem, 8vw, 5rem);
+    font-weight: normal;
+    text-align: center;
+}
+
+h2 {
+    max-width: 24ch;
+    margin: 18px auto;
+    padding: 0 12px;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+}
+
+.story {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 24px;
+    padding: 0 20px 20px;
+    line-height: 1.5;
+}
+
+figure, .byline { margin: 0; }
+
+figure { width: min(14rem, 100%); }
+
+.portrait { position: relative; }
+
+figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: right;
+    filter: grayscale(1);
+}
+
+.portrait .intruder {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-position: center;
+    opacity: 0;
+}
+
+@media (any-hover: hover) {
+    .portrait:hover .intruder { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .portrait .intruder { transition: opacity 350ms ease-in-out; }
+}
+
+figcaption {
+    margin-top: 6px;
+    font: italic 0.9rem Georgia, serif;
+}
+
+footer {
+    padding-top: 12px;
+    border-top: 4px double;
+    text-align: center;
+}
+
+footer a { color: inherit; }
+
+@media (max-width: 600px) {
+    .newspaper { padding: 14px; }
+    .masthead { flex-wrap: wrap; }
+    .masthead strong { order: -1; width: 100%; text-align: center; }
+    .story { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
